@@ -7,13 +7,6 @@
             <StackLayout Spacing="0" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
                 <ContentView Padding="10">
                     <StackLayout Orientation="Horizontal" Spacing="10">
-                        <!--<AbsoluteLayout>
-                            <ffimageloading:CachedImage x:Name="ProfilePhoto" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="90" HeightRequest="90" DownsampleToViewSize="true" Source="{Binding Acquaintance.PhotoUrl}" LoadingPlaceholder="placeholderProfileImage.png">
-                                <ffimageloading:CachedImage.Transformations>
-                                    <fftransformations:CircleTransformation />
-                                </ffimageloading:CachedImage.Transformations>
-                            </ffimageloading:CachedImage>
-                        </AbsoluteLayout>-->
                         <StackLayout Spacing="10">
                             <ContentView>
                                 <StackLayout Spacing="0">
@@ -23,11 +16,6 @@
                             </ContentView>
                             <ContentView>
                                 <StackLayout Orientation="Horizontal" Spacing="10">
-                                    <Image Source="directions.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
-                                        <!--<Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding GetDirectionsCommand}" />
-                                        </Image.GestureRecognizers>-->
-                                    </Image>
                                     <StackLayout Spacing="0">
                                         <Label Text="352 Maple Avenue, , Ontario N2H 4X3" FontSize="Micro" LineBreakMode="TailTruncation" />
                                         <Label Text="Kitchener" FontSize="Micro" LineBreakMode="TailTruncation" />
@@ -37,26 +25,14 @@
                             </ContentView>
                             <ContentView>
                                 <StackLayout Orientation="Horizontal" Spacing="10">
-                                    <Image Source="message.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
-                                        <!--<Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding MessageNumberCommand}" NumberOfTapsRequired="1" />
-                                        </Image.GestureRecognizers>-->
-                                    </Image>
-                                    <Label Text="(519) 744-7000" FontSize="Small" HeightRequest="20" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" />
-                                    <Image Source="phone.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
-                                        <!--<Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding DialNumberCommand}" NumberOfTapsRequired="1" />
-                                        </Image.GestureRecognizers>-->
-                                    </Image>
+                                    <Label Text="(519) 744-7000 (click me please hahaha)" TextColor="#03A9F4" FontSize="Small" HeightRequest="20" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" />
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DialNumberCommand}" NumberOfTapsRequired="1" />
+                                    </Label.GestureRecognizers>
                                 </StackLayout>
                             </ContentView>
                             <ContentView>
                                 <StackLayout Orientation="Horizontal" Spacing="10">
-                                    <Image Source="email.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20">
-                                        <!--<Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding EmailCommand}" NumberOfTapsRequired="1" />
-                                        </Image.GestureRecognizers>-->
-                                    </Image>
                                     <Label Text="info@bwired.ca " FontSize="Micro" HeightRequest="20" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" />
                                 </StackLayout>
                             </ContentView>
@@ -64,6 +40,16 @@
                     </StackLayout>
                 </ContentView>
                 <ContentView HeightRequest="1" BackgroundColor="Silver" />
+                <StackLayout>
+                    <Label Text="Let's keep in touch!" />
+                    <Entry Placeholder="Your Name" />
+                    <Entry Placeholder="Your Email" />
+
+                    <Label Text="Your Message goes Here!"/>
+                    <Editor BackgroundColor="LightGray" HeightRequest="120"/>
+                    <Button Text="Send Message" BackgroundColor="#03A9F4" TextColor="White" />
+
+                </StackLayout>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
