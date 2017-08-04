@@ -1,5 +1,6 @@
 ﻿using Bwired.Models;
 using Plugin.Share;
+using Plugin.TextToSpeech;
 using System;
 using Xamarin.Forms;
 
@@ -39,7 +40,22 @@ namespace Bwired.Views
                   }))
             };
 
+            var speakButton = new ToolbarItem
+            {
+                Icon = "ic_share.png",
+                Text = "Listen"
+
+            };
+
+            speakButton.Clicked += async (sender, args) =>
+            {
+                await CrossTextToSpeech.Current.Speak(item.Description);
+                return;
+            };
+
             ToolbarItems.Add(share);
+            ToolbarItems.Add(speakButton);
+
         }
     }
 }
