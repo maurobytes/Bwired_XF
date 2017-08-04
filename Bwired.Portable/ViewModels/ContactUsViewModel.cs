@@ -67,8 +67,18 @@ namespace Bwired.Portable.ViewModels
                     //Just a simple mail
 
                     //You can change the destination here if info@bwired.ca is not good at all for testing, im sorry :(
-                    emailMessenger.SendEmail("info@bwired.ca", "Email de prueba Xamarin Forms", "Hello there, if you received this message means my all night work worth it!!");
+                    //PD: Oops, also check in spam folder :P 
+                    emailMessenger.SendEmail("m_contreras@outlook.cl", "Email de prueba Xamarin Forms", "Hello there, if you received this message means my all night work worth it!!");
+
+                    var page = new ContentPage();
+                    await page.DisplayAlert("Yay!!", "We sent your message", "OK");
                 }
+                else
+                {
+                    var page = new ContentPage();
+                    await page.DisplayAlert("Oops", "Try to test on real device", "OK");
+                }
+
             }
             catch
             {
