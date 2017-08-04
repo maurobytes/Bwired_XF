@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:BWired.Helpers;assembly=Bwired"
+            x:Class="Bwired.Views.AboutPage"
+             Title="We are wired">
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Spacing="10">
+            <Image Aspect="AspectFill" Source="bwired_logo_clear"/>
+            <StackLayout Spacing="10" 
+                   Padding="10" 
+                   VerticalOptions="FillAndExpand">
+
+                <Label
+               Text="We design, build &amp; support large volume, highly scalable and engaging digital products. We have aligned ourselves with best-in-class technologies across Web, Mobile and Cloud Computing."
+               LineBreakMode="WordWrap"/>
+
+                <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand"
+                     Spacing="10">
+
+                    <Image x:Name="twitter" Source="twitter.png"/>
+                    <Image x:Name="facebook" Source="facebook.png"/>
+                    <Image x:Name="instagram" Source="instagram.png"/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>
