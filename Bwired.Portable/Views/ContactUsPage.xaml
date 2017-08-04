@@ -46,7 +46,7 @@
                     <Entry Placeholder="Your Email" />
 
                     <Label Text="Your Message goes Here!"/>
-                    <Editor BackgroundColor="LightGray" HeightRequest="120"/>
+                    <Editor BackgroundColor="LightGray" HeightRequest="120" Text="This is going to info@bwired.ca"/>
                     <Button Text="Send Message" BackgroundColor="#03A9F4" TextColor="White" />
 
                 </StackLayout>

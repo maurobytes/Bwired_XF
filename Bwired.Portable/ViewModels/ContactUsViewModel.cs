@@ -1,4 +1,5 @@
 ﻿using Bwired.ViewModels;
+using Plugin.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,58 @@ namespace Bwired.Portable.ViewModels
             }
         }
 
+        private Command sendEmailCommand;
+        public Command SendEmailCommand
+        {
+            get
+            {
+                return sendEmailCommand ??
+                    (sendEmailCommand = new Command(async () =>
+                    {
+                        await ExecuteSendEmailCommand();
+                    }, () =>
+                    {
+                        return !IsBusy;
+                    }));
+            }
+        }
+
+        public async Task ExecuteSendEmailCommand()
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+            SendEmailCommand.ChangeCanExecute();
+            var error = false;
+            try
+            {
+                var emailMessenger = CrossMessaging.Current.EmailMessenger;
+                if (emailMessenger.CanSendEmail)
+                {
+                    //TODO: Manage border cases
+
+                    //Just a simple mail
+
+                    //You can change the destination here if info@bwired.ca is not good at all for testing, im sorry :(
+                    emailMessenger.SendEmail("info@bwired.ca", "Email de prueba Xamarin Forms", "Hello there, if you received this message means my all night work worth it!!");
+                }
+            }
+            catch
+            {
+                error = true;
+            }
+
+            if (error)
+            {
+                var page = new ContentPage();
+                await page.DisplayAlert("Error", "Unable to Send Message", "OK");
+            }
+
+            IsBusy = false;
+            SendEmailCommand.ChangeCanExecute();
+        }
+
         public async Task ExecuteDialNumberCommand()
         {
             if (IsBusy)
@@ -42,11 +95,10 @@ namespace Bwired.Portable.ViewModels
             var error = false;
             try
             {
-                //TODO: Dial number
-               
-
-               
-
+                //TODO: manage conections
+                var phoneDialer = CrossMessaging.Current.PhoneDialer;
+                if (phoneDialer.CanMakePhoneCall)
+                    phoneDialer.MakePhoneCall("(519)744-7000‬");
             }
             catch
             {
