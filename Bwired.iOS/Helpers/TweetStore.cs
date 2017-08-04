@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Bwired.Portable;
 using System.IO;
 using Newtonsoft.Json;
+using Bwired.Models;
+using Bwired.Helpers;
 
 [assembly: Xamarin.Forms.Dependency (typeof (Bwired.iOS.iOSTweetStore))]
 
@@ -12,7 +14,7 @@ namespace Bwired.iOS
 {
 	public class iOSTweetStore : ITweetStore
 	{
-		public void Save (System.Collections.Generic.List<Bwired.Portable.Tweet> tweets)
+		public void Save (System.Collections.Generic.List<Tweet> tweets)
 		{
 
 			var FileManager = new Foundation.NSFileManager ();

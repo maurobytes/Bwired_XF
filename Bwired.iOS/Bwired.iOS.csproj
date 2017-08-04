@@ -208,9 +208,6 @@
     <BundleResource Include="Resources\slideout.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Resources\scott.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
     <BundleResource Include="Resources\refresh.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
@@ -259,55 +256,10 @@
     <Compile Include="Helpers\Color.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hanselman.Portable\Bwired.csproj">
+    <ProjectReference Include="..\Bwired.Portable\Bwired.csproj">
       <Project>{028799A4-E2FD-4901-B950-666C00EFBF63}</Project>
       <Name>Bwired</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\hm.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\tdl.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\ratchet.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\hm_full.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\tdl_full.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\ratchet_full.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\tdl%402x.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\hm%402x.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\ratchet%402x.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default%402x.png">
@@ -355,42 +307,7 @@
     </BundleResource>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon%402x.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small%402x.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-60%402x.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Icon-Small-40%402x.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\scott159.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\channel9.png" />
+    <BundleResource Include="Resources\bwired_twitter.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

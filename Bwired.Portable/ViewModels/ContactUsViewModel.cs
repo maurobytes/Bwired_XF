@@ -73,11 +73,7 @@ namespace Bwired.Portable.ViewModels
                     var page = new ContentPage();
                     await page.DisplayAlert("Yay!!", "We sent your message", "OK");
                 }
-                else
-                {
-                    var page = new ContentPage();
-                    await page.DisplayAlert("Oops", "Try to test on real device", "OK");
-                }
+               
 
             }
             catch
@@ -109,6 +105,7 @@ namespace Bwired.Portable.ViewModels
                 var phoneDialer = CrossMessaging.Current.PhoneDialer;
                 if (phoneDialer.CanMakePhoneCall)
                     phoneDialer.MakePhoneCall("(519)744-7000‬");
+               
             }
             catch
             {

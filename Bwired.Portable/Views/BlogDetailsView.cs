@@ -42,8 +42,9 @@ namespace Bwired.Views
 
             var speakButton = new ToolbarItem
             {
-                Icon = "ic_share.png",
-                Text = "Listen"
+                Icon = "ic_play.png",
+                Text = "Listen",
+                
 
             };
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using UIKit;
 using Xamarin.Forms;
+using Bwired.Helpers;
 
 [assembly: Dependency(typeof(LaunchTwitter))]
 namespace Bwired.iOS.Helpers
