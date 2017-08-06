@@ -34,6 +34,8 @@ namespace Bwired.Views
                     new HomeMenuItem { Title = "Blog", MenuType = MenuType.Blog, Icon = "blog.png" },
                     new HomeMenuItem { Title = "Twitter", MenuType = MenuType.Twitter, Icon = "twitternav.png" },
                     new HomeMenuItem { Title = "Contact Us", MenuType = MenuType.Contact, Icon = "twitternav.png" },
+                    new HomeMenuItem { Title = "Take Picture", MenuType = MenuType.TakePicture, Icon = "twitternav.png" }
+
                 };
 
             ListViewMenu.SelectedItem = menuItems[0];

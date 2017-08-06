@@ -7,7 +7,8 @@ namespace Bwired.Models
         About,
         Blog,
         Twitter,
-        Contact
+        Contact,
+        TakePicture
     }
     public class HomeMenuItem : BaseModel
     {

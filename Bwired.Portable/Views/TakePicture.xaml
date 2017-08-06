@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bwired.Portable.Views.TakePicture">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Choose to Take a picture with your Phone or Use the photo gallery"/>
+            <Button Text="Take a Photo!" Command="{Binding TakePictureCommand}"/>
+            <Button Text="Choose an existing one" Command="{Binding GetImageGalleryCommand}"/>
+            <Image x:Name="myImage" VerticalOptions="FillAndExpand" Source="{Binding MyImageSource}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

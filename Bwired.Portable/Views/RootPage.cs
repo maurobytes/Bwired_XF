@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Bwired.Models;
 using Bwired.ViewModels;
 using Bwired.Controls;
+using Bwired.Portable.Views;
 
 namespace Bwired.Views
 {
@@ -61,6 +62,9 @@ namespace Bwired.Views
                         break;
                     case MenuType.Contact:
                         Pages.Add(id, new BwiredNavigationPage(new ContactUsPage()));
+                        break;
+                    case MenuType.TakePicture:
+                        Pages.Add(id, new BwiredNavigationPage(new TakePicture()));
                         break;
                 }
             }
