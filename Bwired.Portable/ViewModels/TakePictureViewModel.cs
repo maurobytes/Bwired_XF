@@ -13,7 +13,7 @@ namespace Bwired.Portable.ViewModels
     {
         public TakePictureViewModel()
         {
-            MyImageSource = null;
+
         }
 
         private ImageSource myImageSource;
@@ -30,20 +30,21 @@ namespace Bwired.Portable.ViewModels
             }
         }
 
-        private Command takePictureCommand;
-        public Command TakePictureCommand
+        private Command<string> takePictureCommand;
+        public Command<string> TakePictureCommand
         {
             get
             {
-                return takePictureCommand ?? (takePictureCommand = new Command(async () =>
+                return takePictureCommand ?? (takePictureCommand = new Command<string>(async (p) =>
                 {
-                    await ExecuteTakePictureCommand();
-                }, () =>
+                    await ExecuteTakePictureCommand(p);
+                }, (p) =>
                 {
                     return !IsBusy;
                 }));
             }
         }
+
 
         private Command getImageGalleryCommand;
         public Command GetImageGalleryCommand
@@ -66,7 +67,7 @@ namespace Bwired.Portable.ViewModels
                 return;
 
             IsBusy = true;
-            getImageGalleryCommand.ChangeCanExecute();
+            GetImageGalleryCommand.ChangeCanExecute();
             var error = false;
 
             try
@@ -81,7 +82,11 @@ namespace Bwired.Portable.ViewModels
                 var file = await CrossMedia.Current.PickPhotoAsync();
 
                 if (file == null)
+                {
+                    IsBusy = false;
+                    GetImageGalleryCommand.ChangeCanExecute();
                     return;
+                }
 
                 MyImageSource = ImageSource.FromStream(() =>
                 {
@@ -101,16 +106,16 @@ namespace Bwired.Portable.ViewModels
             }
 
             IsBusy = false;
-            getImageGalleryCommand.ChangeCanExecute();
+            GetImageGalleryCommand.ChangeCanExecute();
         }
 
-        public async Task ExecuteTakePictureCommand()
+        public async Task ExecuteTakePictureCommand(string isSelfie)
         {
             if (IsBusy)
                 return;
 
             IsBusy = true;
-            GetImageGalleryCommand.ChangeCanExecute();
+            TakePictureCommand.ChangeCanExecute();
             var error = false;
 
             try
@@ -122,14 +127,26 @@ namespace Bwired.Portable.ViewModels
                     return;
                 }
 
-                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                var opts = new Plugin.Media.Abstractions.StoreCameraMediaOptions()
                 {
                     Directory = "Sample",
                     Name = "test.jpg"
-                });
+                };
+
+                if (isSelfie.Equals("true"))
+                {
+                    opts.DefaultCamera = Plugin.Media.Abstractions.CameraDevice.Front;
+                }
+
+                var file = await CrossMedia.Current.TakePhotoAsync(opts);
 
                 if (file == null)
+                {
+                    IsBusy = false;
+                    TakePictureCommand.ChangeCanExecute();
                     return;
+                }
+                   
 
                 MyImageSource = ImageSource.FromStream(() =>
                 {
@@ -149,7 +166,7 @@ namespace Bwired.Portable.ViewModels
             }
 
             IsBusy = false;
-            GetImageGalleryCommand.ChangeCanExecute();
+            TakePictureCommand.ChangeCanExecute();
 
         }
     }

@@ -5,8 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Choose to Take a picture with your Phone or Use the photo gallery"/>
-            <Button Text="Take a Photo!" Command="{Binding TakePictureCommand}"/>
-            <Button Text="Choose an existing one" Command="{Binding GetImageGalleryCommand}"/>
+            <Button Text="Take a great Photo" Command="{Binding TakePictureCommand}" CommandParameter="false" BackgroundColor="#03A9F4" TextColor="White" BorderRadius="1"/>
+            <Button Text="Take an awesome Selfie" Command="{Binding TakePictureCommand}" CommandParameter="true" BackgroundColor="#03A9F4" TextColor="White" BorderRadius="1"/>
+            <Button Text="Or even choose an existing picture" Command="{Binding GetImageGalleryCommand}" BackgroundColor="#03A9F4" TextColor="White" BorderRadius="1"/>
             <Image x:Name="myImage" VerticalOptions="FillAndExpand" Source="{Binding MyImageSource}"/>
         </StackLayout>
     </ContentPage.Content>
