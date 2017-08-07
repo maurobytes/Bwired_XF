@@ -13,7 +13,7 @@ namespace Bwired.Portable.ViewModels
     {
         public TakePictureViewModel()
         {
-
+            MyImageSource = null;
         }
 
         private ImageSource myImageSource;
@@ -86,7 +86,6 @@ namespace Bwired.Portable.ViewModels
                 MyImageSource = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
-                    file.Dispose();
                     return stream;
                 });
             }
@@ -135,7 +134,6 @@ namespace Bwired.Portable.ViewModels
                 MyImageSource = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
-                    file.Dispose();
                     return stream;
                 });
             }
