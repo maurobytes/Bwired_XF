@@ -33,8 +33,8 @@ namespace Bwired.Views
                     new HomeMenuItem { Title = "About", MenuType = MenuType.About, Icon ="about.png" },
                     new HomeMenuItem { Title = "Blog", MenuType = MenuType.Blog, Icon = "blog.png" },
                     new HomeMenuItem { Title = "Twitter", MenuType = MenuType.Twitter, Icon = "twitternav.png" },
-                    new HomeMenuItem { Title = "Contact Us", MenuType = MenuType.Contact, Icon = "twitternav.png" },
-                    new HomeMenuItem { Title = "Take Picture", MenuType = MenuType.TakePicture, Icon = "twitternav.png" }
+                    new HomeMenuItem { Title = "Contact Us", MenuType = MenuType.Contact, Icon = "contact_icon.png" },
+                    new HomeMenuItem { Title = "Take Picture", MenuType = MenuType.TakePicture, Icon = "camera_icon.png" }
 
                 };
 

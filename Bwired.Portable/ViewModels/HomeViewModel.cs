@@ -42,7 +42,14 @@ namespace Bwired.ViewModels
                 Id = 2,
                 Title = "Contact Us",
                 MenuType = MenuType.Contact,
-                Icon = "twitternav.png"
+                Icon = "contact_icon.png"
+            });
+            MenuItems.Add(new HomeMenuItem
+            {
+                Id = 2,
+                Title = "Take Picture",
+                MenuType = MenuType.TakePicture,
+                Icon = "camera_icon.png"
             });
         }
 
