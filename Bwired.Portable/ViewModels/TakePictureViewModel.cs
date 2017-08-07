@@ -76,6 +76,8 @@ namespace Bwired.Portable.ViewModels
                 {
                     var page = new ContentPage();
                     await page.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                    IsBusy = false;
+                    GetImageGalleryCommand.ChangeCanExecute();
                     return;
                 }
 
@@ -123,6 +125,8 @@ namespace Bwired.Portable.ViewModels
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
                     var page = new ContentPage();
+                    IsBusy = false;
+                    TakePictureCommand.ChangeCanExecute();
                     await page.DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
                     return;
                 }

@@ -321,6 +321,12 @@
   <ItemGroup>
     <BundleResource Include="Resources\bwired_twitter.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\contact_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\camera_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
